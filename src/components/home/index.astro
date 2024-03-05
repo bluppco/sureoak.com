@@ -1,11 +1,11 @@
 ---
 
-// IMPORTS ASTRO LAYOUTS
-import Container from "@/layouts/container/index.astro"
+// IMPORTS COMMON COMPONENTS
+import Footer from "@/components/common/footer/index.astro"
+import Header from "@/components/common/header/index.astro"
+import HeaderBanner from "@/components/common/header-banner/index.astro"
 
 ---
-<section class="bg-zinc-200 py-10">
-    <Container>
-        <p class="text-black">I am home</p>
-    </Container>
-</header>
+<HeaderBanner/>
+<Header/>
+<Footer/>
