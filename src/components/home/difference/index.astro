@@ -1,0 +1,48 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import DifferenceCard from "@/components/home/difference/card/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwoBlueCenter from "@/atoms/heading/two/blue/center/index.astro"
+
+const data = {
+
+    title: "The Sure Oak Difference"
+
+}
+
+const difference = Array(6).fill({
+
+    title: "Our Expertise",
+    description: "Our foundation of expertise is built upon exploring various strategies that have been proven to achieve massive organic search results that translate not only into traffic, but revenue as well.",
+    cover: "/delete-later/expertise.png"
+
+})
+
+---
+<Container>
+    <section class="py-20">
+        <HeadingTwoBlueCenter>{ data.title }</HeadingTwoBlueCenter>
+        <div class="space-y-4">
+            {
+
+                difference.map( ( value ) => {
+
+                    return(
+                        <DifferenceCard
+                            description={ value.description }
+                            source={ value.cover }
+                            title={ value.title }
+                        />
+                    )
+
+                })
+
+            }
+        </div>
+    </section>
+</Container>

@@ -27,3 +27,6 @@
 .carousel.carousel-slider{
     overflow: inherit !important;
 }
+.markdown p {
+    @apply text-sureoak_black font-commissioner py-2 !important;
+}
