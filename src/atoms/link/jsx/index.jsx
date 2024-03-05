@@ -9,7 +9,7 @@ const Link = ( props ) => {
     } = props
 
     return(
-        <a href={ href } aria-label={ aria_label } className="block">
+        <a href={ "/" + href } aria-label={ aria_label } className="block">
             { props.children }
         </a>
     )
