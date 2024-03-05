@@ -47,10 +47,14 @@ module.exports = {
 			},
 			colors: {
 
+				"sureoak_light_green": "#62D780",
+				"sureoak_green": "#14db76",
+				"sureoak_black": "#333333"
 
 			},
 			fontFamily: {
 
+				"commissioner": [ "Commissioner", "sans-serif" ]
 
 			}
 
