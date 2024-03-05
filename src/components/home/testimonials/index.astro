@@ -1,0 +1,35 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwoBlueCenter from "@/atoms/heading/two/blue/center/index.astro"
+
+// IMPORTS JSX COMPONENTS
+import Testimonials from "@/components/home/testimonials/jsx/index.jsx"
+
+const testimonials = Array(6).fill({
+
+    name: "Brad Phillips",
+    company_name: "Throughline Group",
+    review: `After a sour experience with a previous SEO firm, we were anxious about jumping into another SEO relationship. It turns out that partnering with Sure Oak was one of the best decisions we’ve made. Not only do they do all of the things one would expect, but I’ve found them to be an essential partner in making broader business strategy changes that result in higher conversion rates.”`,
+    cover: "/delete-later/brad.jpg",
+
+})
+const data = {
+
+    title: "What our clients say"
+
+}
+
+---
+<Container>
+    <section class="py-20">
+        <HeadingTwoBlueCenter>{ data.title }</HeadingTwoBlueCenter>
+        <Testimonials
+            client:load
+            data={ testimonials }
+        />
+    </section>
+</Container>

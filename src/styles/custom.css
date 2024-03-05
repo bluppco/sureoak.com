@@ -1,0 +1,29 @@
+.control-dots{
+    bottom: -20px !important;
+}
+
+/* @media only screen and (max-width: 767px) {
+    .control-dots {
+        bottom: 10px !important;
+    }
+} */
+.carousel .control-dots .dot{
+    background-color: #D3D3D3 !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+    width: 12px !important;
+    height: 12px !important;
+}
+
+.carousel .control-dots .dot:hover{
+    opacity: 0.8 !important;
+    background-color: #808080 !important;
+}
+
+.carousel .control-dots .dot.selected{
+    background-color: #333333 !important;
+
+}
+.carousel.carousel-slider{
+    overflow: inherit !important;
+}
