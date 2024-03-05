@@ -1,0 +1,31 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import ButtonSecondary from "@/atoms/button/secondary/index.astro"
+import HeadingTwoGreenCenter from "@/atoms/heading/two/green/index.astro"
+import Link from "@/atoms/link/index.astro"
+import Paragraph2XlBlue from "@/atoms/paragraph/two-xl/blue/center/index.astro"
+
+const data = {
+
+    title: "Rank higher. Grow faster.",
+    description: "We believe in bold dreamers and the power of a connected world to make big ideas a reality. We are nurturers of growth. We are experts in marketing who are obsessed with learning, and who deeply value personal freedom. Our purpose is to empower people to lead fulfilling lives through our proven growth strategies. We make it happen through SEO.",
+    button_text: "Schedule a Free Strategy Session",
+    button_link: "strategy-call"
+
+}
+
+---
+<Container>
+    <section class="flex flex-col gap-6 justify-center items-center py-14">
+        <div class="bg-[#26739975] h-[1px] w-96 mb-4" />
+        <Paragraph2XlBlue>{ data.description }</Paragraph2XlBlue>
+        <HeadingTwoGreenCenter>{ data.title }</HeadingTwoGreenCenter>
+        <Link href={ data.button_link } aria_label={ data.button_text }>
+            <ButtonSecondary>{ data.button_text }</ButtonSecondary>
+        </Link>
+    </section>
+</Container>
