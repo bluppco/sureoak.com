@@ -1,0 +1,43 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import TitleDescription from "@/components/home/results-driven-seo/title-description/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwoBlue from "@/atoms/heading/two/blue/index.astro"
+
+const data = {
+
+    title: "Grow your traffic, leads & revenue with results-driven SEO."
+
+}
+const seo_results = {
+
+    title: "Tired of not getting the results you want from your SEO?",
+    description: "We will help your website rank for high-intent keywords that bring high-value organic traffic. We drive sustainable growth by ensuring your organic traffic converts into leads and revenue. More organic traffic is great, but more traffic without conversions? Not so great."
+
+}
+const different = {
+
+    title: "Tired of not getting the results you want from your SEO?",
+    description: "We will help your website rank for high-intent keywords that bring high-value organic traffic. We drive sustainable growth by ensuring your organic traffic converts into leads and revenue. More organic traffic is great, but more traffic without conversions? Not so great."
+
+}
+
+---
+<Container>
+    <section class="space-y-8 py-8 px-40">
+        <HeadingTwoBlue>{ data.title }</HeadingTwoBlue>
+        <TitleDescription
+            title={ seo_results.title }
+            description={ seo_results.description }
+        />
+        <TitleDescription
+            title={ different.title }
+            description={ different.description }
+        />
+    </section>
+</Container>

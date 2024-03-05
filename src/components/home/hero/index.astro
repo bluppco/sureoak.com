@@ -5,9 +5,6 @@ import Container from "@/layouts/container/index.astro"
 
 // IMPORTS ASTRO ATOMS
 import ButtonPrimary from "@/atoms/button/primary/index.astro"
-import HeadingOneBlue from "@/atoms/heading/one/blue/index.astro"
-import HeadingThreeBlue from "@/atoms/heading/three/blue/index.astro"
-import HeadingTwoBlue from "@/atoms/heading/two/blue/index.astro"
 import Link from "@/atoms/link/index.astro"
 
 const data = {
@@ -22,7 +19,7 @@ const data = {
 }
 
 ---
-<section class="py-24 mt-28 bg-contain bg-no-repeat bg-center overflow-hidden w-full min-w-full" style=`background-image: url(${ data.cover + "?quality=80" })`>
+<section class="py-32 mt-28 bg-cover bg-no-repeat bg-center overflow-hidden w-full" style=`background-image: url(${ data.cover + "?quality=80" })`>
     <Container>
         <section class="flex flex-col gap-4 justify-center items-center">
             <h1 class="text-sureoak_blue text-4xl font-commissioner font-medium">{ data.title }</h1>
