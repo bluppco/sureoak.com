@@ -1,0 +1,52 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO COMPONENTS
+import ServiceCard from "@/components/home/services/card/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwoBlueCenter from "@/atoms/heading/two/blue/center/index.astro"
+
+const data = {
+
+    title: "Our SEO Agency Services"
+
+}
+
+const services = Array(3).fill({
+
+    button_link: "seo-campaign-management",
+    button_text: "Learn More »",
+    description: "Leverage the most powerful ranking factors for your website with our on-page SEO optimization services. Check out how we cover all the bases, from keywords to H1 tags and more.",
+    cover: "/delete-later/seo-service.jpg",
+    title: "Fully Managed SEO Services"
+
+})
+
+---
+<Container>
+    <section class="space-y-16 py-16">
+        <HeadingTwoBlueCenter>{ data.title }</HeadingTwoBlueCenter>
+        {
+
+            services.map( ( value, index ) => {
+
+                return(
+                    <ServiceCard
+                        alternative_text={ value.title }
+                        button_link={ value.button_link }
+                        button_text={ value.button_text }
+                        description={ value.description }
+                        is_right={ index%2 }
+                        source={ value.cover }
+                        title={ value.title }
+                    />
+                )
+
+            })
+
+        }
+    </section>
+</Container>

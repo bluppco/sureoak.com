@@ -50,7 +50,8 @@ module.exports = {
 				"sureoak_light_green": "#62D780",
 				"sureoak_green": "#14db76",
 				"sureoak_black": "#333333",
-				"sureoak_blue": "#267299"
+				"sureoak_blue": "#267299",
+				"sureoak_light_blue": "#00AEE4"
 
 			},
 			fontFamily: {
