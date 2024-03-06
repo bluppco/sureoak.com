@@ -14,7 +14,7 @@ const Testimonials = ( props ) => {
     const { data } = props
 
     return (
-        <section className="w-full h-[400px] md:h-full group">
+        <section className="w-full h-full group">
             <Carousel showThumbs={ false } showStatus={ false } showArrows={ true } autoPlay={ true } infiniteLoop={ true }
                 renderArrowPrev={( onClickHandler, hasPrev, label ) =>
                 hasPrev && (
