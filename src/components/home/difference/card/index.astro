@@ -1,0 +1,33 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import HeadingThreeBlue from "@/atoms/heading/three/blue/index.astro"
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+
+// IMPORTS MARKED
+import { marked } from "marked"
+
+// GET ASTRO PROPS
+const {
+
+    description,
+    source,
+    title
+
+} = Astro.props
+
+const html = marked.parse( description )
+
+---
+<div class="flex gap-8 items-center">
+    <div class="size-36">
+        <PictureInternalContain
+            alternative_text={ title }
+            source={ source }
+        />
+    </div>
+    <div class="space-y-2">
+        <HeadingThreeBlue>{ title }</HeadingThreeBlue>
+        <section set:html={ html } class="markdown" />
+    </div>
+</div>

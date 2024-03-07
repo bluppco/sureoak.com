@@ -1,0 +1,27 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import ParagraphRegular from "@/atoms/paragraph/regular/index.astro"
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    description,
+    title
+
+} = Astro.props
+
+---
+<div class="flex gap-3 items-center">
+    <div class="size-12">
+        <PictureInternalContain
+            alternative_text="tick icon"
+            source="/icons/tick.svg"
+        />
+    </div>
+    <div class="space-y-1">
+        <span class="text-sureoak_blue text-xl font-commissioner font-light">{ title }</span>
+        <ParagraphRegular>{ description }</ParagraphRegular>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import ButtonPrimary from "@/atoms/button/primary/index.astro"
+import Link from "@/atoms/link/index.astro"
+
+const data = {
+
+    title: "The Last SEO Agency You’ll Ever Need",
+    sub_title: "Proven SEO & link building strategies customized to your goals",
+    description: "Strategic thinking. Expert SEO services. Long-term growth.",
+    button_text: "Schedule a Free Strategy Session",
+    button_link: "/strategy-call",
+    cover: "/delete-later/hero-cover.png"
+
+}
+
+---
+<section class="py-32 mt-28 bg-cover bg-no-repeat bg-center overflow-hidden w-full" style=`background-image: url(${ data.cover + "?quality=80" })`>
+    <Container>
+        <section class="flex flex-col gap-4 justify-center items-center">
+            <h1 class="text-sureoak_blue text-4xl font-commissioner font-medium">{ data.title }</h1>
+            <h2 class="text-sureoak_blue text-2xl font-commissioner">{ data.sub_title }</h2>
+            <h3 class="text-sureoak_blue text-lg font-commissioner font-light">{ data.description }</h3>
+            <Link href={ data.button_link } aria_label={ data.button_text }>
+                <ButtonPrimary>{ data.button_text }</ButtonPrimary>
+            </Link>
+        </section>
+    </Container>
+</section>

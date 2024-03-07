@@ -1,0 +1,41 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import HeadingTwoWhiteCenter from "@/atoms/heading/two/white/center/index.astro"
+import PictureInternalContain from "@/atoms/picture/internal/jsx/contain"
+
+const data = {
+
+    cover: "/delete-later/clients-cover.png",
+    title: "Brands who trust us",
+
+}
+
+const images = Array(5).fill({
+
+    logo: "/delete-later/red-cross.png"
+
+})
+
+---
+<section class="py-28 px-44 space-y-12" style=`background-image: url(${ data.cover + "?quality=80" })`>
+    <HeadingTwoWhiteCenter>{ data.title }</HeadingTwoWhiteCenter>
+    <div class="flex items-center justify-between gap-10">
+        {
+
+            images.map( ( value ) => {
+
+                return(
+                    <div class="h-12 w-full">
+                        <PictureInternalContain
+                            alternative_text=""
+                            source={ value.logo }
+                        />
+                    </div>
+                )
+
+            })
+
+        }
+    </div>
+</section>

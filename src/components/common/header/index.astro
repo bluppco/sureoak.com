@@ -1,0 +1,99 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import Link from "@/atoms/link/index.astro"
+import PictureInternalContain from "@/atoms/picture/internal/contain/index.astro"
+import ButtonSecondary from "@/atoms/button/secondary/index.astro"
+
+// IMPORTS HEADER COLLECTION
+import { getCollection } from "astro:content"
+
+let header_data = await getCollection("header")
+header_data = header_data.sort((a, b) => a.data.order - b.data.order)
+
+---
+<header class="h-28 hidden md:flex items-center fixed top-10 z-[100] w-full bg-white border-b border-zinc-200">
+    <Container>
+        <nav class="flex items-center justify-between h-full">
+            <Link href="/" aria_label="Sure Oak logo">
+                <div class="h-20 w-full">
+                    <PictureInternalContain
+                        alternative_text="Sure Oak logo"
+                        source="/logo/sureoak-logo.png"
+                    />
+                </div>
+            </Link>
+            <section>
+                <div class="flex items-center gap-4 justify-end">
+                    <Link href="/contact" aria_label="contact">
+                        <span class="font-commissioner">Contact</span>
+                    </Link>
+                    <Link href="/strategy-call" aria_label="Free Strategy Session">
+                        <ButtonSecondary>Free Strategy Session</ButtonSecondary>
+                    </Link>
+                </div>
+                <div class="flex gap-8 items-center">
+                    <ul class="flex gap-4">
+                        {
+
+                            header_data.map( ( item ) => {
+
+                                return (
+                                    <li class="flex items-center gap-1 relative group cursor-pointer font-commissioner hover:text-sureoak_green px-2 py-4">
+                                        <Link
+                                            aria_label={"explore " + item.data.title }
+                                            href={ "/" + item.data.slug }
+                                        >
+                                            { item.data.title }
+                                        </Link>
+                                        {
+
+                                            item.data.has_dropdown &&
+                                            <div>
+                                                <div class="size-4">
+                                                    <PictureInternalContain
+                                                        alternative_text="dropdown menu icon"
+                                                        source="/icons/dropdown.svg"
+                                                    />
+                                                </div>
+                                                <div class="hidden group-hover:block group-hover:flex-col absolute bg-white -left-6 z-20 top-14 w-56 gap-2">
+                                                    <div class="flex flex-col">
+                                                    {
+
+                                                        item.data.items.map( ( sub_item, sub_item_index ) => {
+
+                                                            return(
+                                                                <div class="py-3 px-10">
+                                                                    <Link
+                                                                        aria_label={ "explore" + sub_item.title }
+                                                                        href={ "/" + item.data.slug + "/" + sub_item.slug }
+                                                                    >
+                                                                        <span class="text-sureoak_black hover:text-sureoak_green">{ sub_item.title }</span>
+                                                                    </Link>
+                                                                </div>
+                                                                <div class={`w-full bg-zinc-300 h-px ${ sub_item_index + 1 < item.data.items.length ? "block" : "hidden" }`}></div>
+                                                            )
+
+                                                        })
+
+                                                    }
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        }
+                                    </li>
+                                )
+
+                            })
+
+                        }
+                    </ul>
+                </div>
+            </section>
+        </nav>
+    </Container>
+</header>

@@ -1,0 +1,37 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import HeadingThreeBlue from "@/atoms/heading/three/blue/index.astro"
+import Link from "@/atoms/link/index.astro"
+import ParagraphLarge from "@/atoms/paragraph/large/index.astro"
+import PictureInternal from "@/atoms/picture/internal/index.astro"
+
+// GET ASTRO PROPS
+const {
+
+    alternative_text,
+    button_link,
+    button_text,
+    description,
+    is_right,
+    source,
+    title
+
+} = Astro.props
+
+---
+<div class="grid grid-cols-2 gap-12">
+    <div class={` ${ is_right ? "order-last" : "order-none" } w-full aspect-video bg-zinc-200`}>
+        <PictureInternal
+            alternative_text={ alternative_text }
+            source={ source }
+        />
+    </div>
+    <div class="flex flex-col gap-6 justify-center">
+        <HeadingThreeBlue>{ title }</HeadingThreeBlue>
+        <ParagraphLarge>{ description }</ParagraphLarge>
+        <Link href={ "/services/" + button_link } aria_label={ button_text }>
+            <span class="text-sureoak_light_blue text-lg">{ button_text }</span>
+        </Link>
+    </div>
+</div>
