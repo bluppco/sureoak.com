@@ -1,0 +1,19 @@
+---
+
+// IMPORTS ASTRO ATOMS
+import PictureInternal from "@/atoms/picture/internal/index.astro"
+
+const data = {
+
+    title: "SureOak Retreat 2019",
+    cover: "/delete-later/image-banner.jpg"
+
+}
+
+---
+<div class="h-80 md:h-[640px] w-full">
+    <PictureInternal
+        alternative_text={ data.title }
+        source={ data.cover }
+    />
+</div>

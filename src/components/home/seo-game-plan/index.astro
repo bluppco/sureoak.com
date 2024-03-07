@@ -1,0 +1,32 @@
+---
+
+// IMPORTS ASTRO LAYOUTS
+import Container from "@/layouts/container/index.astro"
+
+// IMPORTS ASTRO ATOMS
+import ButtonPrimary from "@/atoms/button/primary/index.astro"
+import HeadingTwoWhiteCenter from "@/atoms/heading/two/white/center/index.astro"
+import Link from "@/atoms/link/index.astro"
+import Paragraph2XlWhiteCenter from "@/atoms/paragraph/two-xl/white/center/index.astro"
+
+const data = {
+
+    title: "The Sure Oak SEO Game Plan",
+    description: "The Game Plan is Sure Oak’s proprietary, holistic approach to building a solid foundation for your SEO. With this proven process we will create a plan to increase your website’s search rankings, bring more organic traffic, and drive conversions and sales.",
+    button_text: "Learn More",
+    button_link: "services/seo-plan"
+
+}
+
+---
+<section class="bg-sureoak_light_blue py-16">
+    <Container>
+        <section class="flex flex-col gap-8 items-center">
+            <HeadingTwoWhiteCenter>{ data.title }</HeadingTwoWhiteCenter>
+            <Paragraph2XlWhiteCenter>{ data.description }</Paragraph2XlWhiteCenter>
+            <Link href={ data.button_link } aria_label={ data.button_text }>
+                <ButtonPrimary>{ data.button_text }</ButtonPrimary>
+            </Link>
+        </section>
+    </Container>
+</section>
